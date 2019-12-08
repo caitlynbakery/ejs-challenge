@@ -19,10 +19,22 @@ app.get("/", function(req, res) {
   res.render("home", {homeContentEJS: homeStartingContent});
 });
 
+app.get("/contact", function(req, res) {
+  res.render("contact", {contactContentEJS: contactContent});
+});
 
+app.get("/about", function(req, res) {
+  res.render("about", {aboutContentEJS: aboutContent});
+});
 
+app.get("/compose", function(req, res) {
+  res.render("compose");
+});
 
+app.post("/compose", function(req, res) {
+  console.log(req.body.postTitle);
 
+});
 
 
 
