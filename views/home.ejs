@@ -2,7 +2,6 @@
     <h1>Home</h1>
     <p><%= homeContentEJS %></p>
     <%postsEJS.forEach(post => { %>
-        <% console.log(post.title) %>
         <h1><%=post.title %></h1>
         <p><%=post.content %></p>
     <% }) %>
