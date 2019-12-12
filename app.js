@@ -48,7 +48,14 @@ app.post("/compose", function(req, res) {
 });
 
 app.get("/posts/:postName", function(req, res){
-  console.log(req.params.postName);
+  const requestedTitle = req.params.postName;
+  posts.forEach(panda => {
+    const storedTitle = panda.title;
+    if(requestedTitle === storedTitle) {
+      console.log("Match Found!!");
+    };
+  })
+  
 })
 
 
