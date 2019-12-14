@@ -50,12 +50,14 @@ app.post("/compose", function(req, res) {
 
 app.get("/posts/:postName", function(req, res){
   const requestedTitle = _.lowerCase(req.params.postName);
+  console.log(requestedTitle);
   posts.forEach(panda => {
     const storedTitle = _.lowerCase(panda.title);
     if(requestedTitle === storedTitle) {
-      res.render("post");
-    } else{
-      console.log("Not a Match");
+      res.render("post", {
+        title: panda.title, 
+        content: panda.content
+      });
     }
   })
   
